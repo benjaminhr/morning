@@ -2,6 +2,5 @@
 
 - Username stored in localStorage
 - Background comes from unsplash (Helsinki)
-- TODO:
-  - Weather
-  - Quote of the day
+- Dynamic page title
+- Just try it out, it's pretty cool

@@ -15,7 +15,11 @@ function ready() {
   var userName;
   var quoteDiv = document.getElementById('quote');
 
-  // TODO if username is in localStorage skip first step
+  if (!localStorage.username == '' || !localStorage.username == ' ') {
+    preText.classList.add('hidden');
+    afterText.classList.remove('hidden');
+    quoteDiv.classList.remove('hidden');
+  }
 
   input.addEventListener('keydown', (e) => {
     if (e.keyCode == 13) {
@@ -37,8 +41,9 @@ function ready() {
   }
 
   function name() {
-    var localUserName = localStorage.username;
+    var localUserName = localStorage.getItem('username');
     user.innerHTML = 'Hello, ' + localUserName + '.';
+    document.title = 'Morning ' + localUserName;
   } name();
 
   function startTime() {

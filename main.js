@@ -7,18 +7,35 @@ window.onload = () => {
 
 function ready() {
 
+  var preText = document.getElementById('preText');
+  var afterText = document.getElementById('afterText');
+  var text = document.getElementsByClassName('text')
   var input = document.getElementById('input');
+  var user = document.getElementById('userName');
   var userName;
 
   input.addEventListener('keydown', (e) => {
     if (e.keyCode == 13) {
-      userName = input.value;
-      console.log(userName);
+    userName = input.value;
+      if(typeof(Storage) !== 'undefined') {
+        localStorage.setItem('username', userName);
+      }
       input.value = '';
       e.preventDefault();
+      hideShow();
       return false;
     }
-  }, false)
+  });
+
+  function hideShow() {
+    preText.classList.add('hidden');
+    afterText.classList.remove('hidden');
+  }
+
+  function name() {
+    var localUserName = localStorage.username;
+    user.innerHTML = 'Hello, ' + localUserName + '.';
+  } name();
 
   function startTime() {
     var d = new Date();

@@ -1,6 +1,6 @@
 window.onload = () => {
   var html = document.querySelector('html');
-  html.style.backgroundImage = 'url(' + 'https://source.unsplash.com/category/buildings/?helsinki' + ')';
+  html.style.backgroundImage = 'url(' + 'https://source.unsplash.com/random/?nordic' + ')';
   ready();
 }
 
@@ -61,6 +61,7 @@ function ready() {
 
   function quote() {
     const url = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=";
+    //const options = {mode:'no-cors'};
 
     fetch(url)
       .then((response) => response.json())
